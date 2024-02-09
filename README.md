@@ -1,32 +1,66 @@
 ![A simple Event Driven Serverless 3 Tier Architecture](bmotest.png)
 
-# BMO Pre-Interview Event Driven CDK TypeScript project
+## BMO Pre-Interview Event-Driven CDK TypeScript Project
 
-This is Simple WooCommerce Event driven(Serverless) Application that deals with user request and response from the client side through an API-gateway that invoke a lambda to GET request from the database and return response and send all logs to cloudwatch to easily access logs and give visibility to Invocation, concurrency, throttling and errors.
+### Overview:
 
-## DOCUMENTATION
+This project showcases a simplified, event-driven WooCommerce application built with Cloud Development Kit (CDK) and TypeScript. It demonstrates user request handling, database interactions, and logging mechanisms:
 
-This is a high-level documentation that explains the workflow of this mini project and while i have decide to use this frame work for this project
+Users send requests via an API Gateway endpoint.
+A Lambda function processes the request, retrieving data from a DynamoDB NoSQL database.
+Responses are sent back to the user.
+Logs are streamed to CloudWatch for monitoring and analysis.
 
-- This project is an event driven(serverless) application that takes a request from a user to access a database and send a back a response
+## Key Technologies:
 
-And the services use for this project includes
+### CDK:
 
-1. API-Gateway
-2. AWS Lambda
-3. DynamoDB - NoSql Database
-4. That sends a logs to cloudwatch for mor visibility to invocation, concurrency, throttling and errors.
+- Enables infrastructure automation and provisioning via Infrastructure as Code (IaC).
+- TypeScript: Enhances code maintainability and type safety.
+- API Gateway: Serves as the entry point for user requests.
+- Lambda: Serverless functions handle business logic and database interactions.
+- DynamoDB: Flexible NoSQL database for efficient data storage and retrieval.
+- CloudWatch: Centralized logging service for comprehensive insights into invocations, errors, and metrics.
 
-Reason for this architecture/framework is to scalable infrastructure, cost optimization, availability and a fault tolerant Environment.
+## Benefits
 
-## Useful commands
+### Scalability:
 
-- `cdk bootstrap` Bootstrap all the necesary toolkit, metadata for cdk deployment
-- `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
-- `cdk synth` this emits the synthesized CloudFormation template to preview all resurces before creation
-- `cdk destroy` this destroys the stack from the desired account
+- Serverless architecture automatically scales with traffic demands.
+- Cost Optimization: Pay only for used resources, minimizing idle costs.
+- Availability: Highly available services ensure minimal downtime.
+- Fault Tolerance: Automatic retries and redundancy built into the infrastructure.
 
-## EXCERCISE
+### Useful Commands:
 
-The Application Engineering team has been developing a custom WooCommerce-based product which will need to be deployed for this initiative. As a member of the DevOps Engineering team your job will be to create the cloud-based infrastructure for supporting this deployment. You will need to create a reference architecture and implement it using modern IaC techniques with documentation for 3-tier application. You can use serverless or container technology or VMs to implement this.
+- cdk bootstrap: Initializes CDK environment and tools.
+- cdk deploy: Deploys the project to your default AWS account/region.
+- cdk diff: Compares deployed stack with current state for change detection.
+- cdk synth: Generates and displays the CloudFormation template without deployment.
+- cdk destroy: Removes the deployed stack from your account.
+
+## Getting Started:
+
+1. Set up your AWS environment with an IAM user and configure CDK.
+2. Clone this repository and install dependencies: npm install.
+3. Run cdk bootstrap to set up the CDK environment.
+4. Customize the app.ts file and Lambda functions as needed.
+5. Deploy the project with cdk deploy.
+
+### Architecture:
+
+User: Initiates requests through an API Gateway endpoint.
+API Gateway: Routes requests to the appropriate Lambda function based on path and method.
+Lambda Function: Processes the request, fetching data from DynamoDB using the AWS SDK.
+DynamoDB: Stores and retrieves application data in a NoSQL format.
+CloudWatch: Collects and stores logs from API Gateway and Lambda for easy access and analysis.
+Response: Delivers the processed response back to the user via the API Gateway.
+
+### Additional Notes:
+
+Ensure you have the necessary AWS permissions to create and manage resources.
+AWS Cloudwatch implemented also helps Integrate error handling and logging for comprehensive troubleshooting.
+
+## Conclusion:
+
+This project serves as a valuable learning experience and demonstrates the power of event-driven architectures built with CDK and TypeScript. Adapt and expand upon it to create robust and scalable cloud applications.
