@@ -63,4 +63,4 @@ AWS Cloudwatch implemented also helps Integrate error handling and logging for c
 
 ## Conclusion:
 
-This project serves as a valuable learning experience and demonstrates the power of event-driven architectures built with CDK and TypeScript. Adapt and expand upon it to create robust and scalable cloud applications.
+This project serves as a valuable learning experience and demonstrates the power of event-driven architectures built with CDK and TypeScript.
