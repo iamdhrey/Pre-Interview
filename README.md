@@ -1,3 +1,5 @@
+![A simple Event Driven Serverless 3 Tier Architecture](bmotest.png)
+
 # Welcome to your CDK TypeScript project
 
 This is Simple WooCommerce Event driven(Serverless) Application that deals with user request and response from the client side through a cloudfront to reduce low latency and help with caching through an API-gateway that invoke a lambda to GET resquest from the database and return response and send all logs to cloudwatch to easily access logs and give visibility to Invocation, concurrency, throttling and errors.
