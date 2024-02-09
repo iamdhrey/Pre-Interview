@@ -23,7 +23,7 @@ export class PreInterviewStack extends cdk.Stack {
       runtime: Runtime.NODEJS_16_X,
       memorySize: 512,
       handler: "handler.main",
-      code: Code.fromAsset(join(__dirname, "../lambda")),
+      code: Code.fromAsset(join(__dirname, "./")),
       environment: {
         TABLE_NAME: props.newTable.tableName,
       },
